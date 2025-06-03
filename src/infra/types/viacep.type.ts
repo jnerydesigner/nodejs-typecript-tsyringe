@@ -1,3 +1,3 @@
-export const ViaCepType = {
+export const ViaCepTypes = {
   ViaCepController: Symbol.for("ViaCepController"),
 };

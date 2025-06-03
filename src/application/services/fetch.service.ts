@@ -7,6 +7,7 @@ export class FetchService implements IHttpService {
     const response = await fetch(url, {
       method: "GET",
     });
+
     const data: T = await response.json();
 
     return data;

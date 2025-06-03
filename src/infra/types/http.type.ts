@@ -1,4 +1,4 @@
-export const HttpType = {
-  AxiosService: Symbol.for("AxiosService"),
+export const HttpTypes = {
   FetchService: Symbol.for("FetchService"),
+  AxiosService: Symbol.for("AxiosService"),
 };

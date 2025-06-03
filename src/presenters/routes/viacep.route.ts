@@ -1,7 +1,8 @@
-import { ViaCepController } from "@presenters/controllers/viacep.controller";
 import { Router } from "express";
-import { container } from "tsyringe";
+
 import "@infra/containers";
+import { container } from "tsyringe";
+import { ViaCepController } from "@presenters/controllers/viacep.controller";
 
 const viaCepRoutes = Router();
 

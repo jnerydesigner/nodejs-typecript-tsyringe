@@ -1,18 +1,21 @@
-import { injectable } from "inversify";
-import pino from "pino";
+import { injectable } from "tsyringe";
+import pino, { Logger } from "pino";
 import { ILogger } from "./logger.interface";
 
 @injectable()
 export class PinoLogger implements ILogger {
-  private readonly logger = pino({
-    transport: {
-      target: "pino-pretty",
-      options: {
-        colorize: true,
-        translateTime: "SYS:standard",
+  private readonly logger: Logger;
+  constructor() {
+    this.logger = pino({
+      transport: {
+        target: "pino-pretty",
+        options: {
+          colorize: true,
+          translateTime: "SYS:standard",
+        },
       },
-    },
-  });
+    });
+  }
 
   info(message: string): void {
     this.logger.info(message);

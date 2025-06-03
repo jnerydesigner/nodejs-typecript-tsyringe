@@ -4,6 +4,8 @@ import { logger } from "@infra/logger/logger.log";
 
 import { viaCepRoutes } from "@presenters/routes/viacep.route";
 import express, { Request, Response } from "express";
+import { viacepModule } from "@infra/modules/viacep.module";
+import { registerRoutes } from "@presenters/routes/register-route";
 
 const PORT = process.env.SERVER_PORT || 3333;
 
@@ -16,6 +18,9 @@ async function bootstrap() {
       message: "Hello Word",
     });
   });
+  viacepModule();
+
+  registerRoutes(app);
 
   app.use("/viacep", viaCepRoutes);
 
